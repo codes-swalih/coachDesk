@@ -18,7 +18,7 @@ const navigations = [
   { name: 'Dashboard', icon: FrameIcon, href: '/shihan' },
   { name: 'Sensai', icon: BookOpenCheck, href: '/shihan/sensai' },
   { name: 'Dojos', icon: GalleryVerticalEndIcon, href: '/shihan/dojos' },
-  { name: 'Students', icon: BotIcon, href: '/students' },
+  { name: 'Students', icon: BotIcon, href: '/shihan/students' },
 ];
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {

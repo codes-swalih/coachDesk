@@ -1,6 +1,6 @@
+'use client';
 import React from 'react';
 import { Textarea } from '@/components/ui/textarea';
-
 import {
   Dialog,
   DialogContent,
@@ -31,6 +31,7 @@ function SensaiInviteDialog() {
     { label: 'Mannarkad', value: 'mannarkad' },
     { label: 'Ashupathrippadi', value: 'ashupathrippadi' },
   ];
+
   const [selectDojo, setSelectDojo] = React.useState<string[]>([]);
 
   return (

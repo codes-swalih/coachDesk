@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -11,8 +10,8 @@ import {
 
 import { Pencil } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import SensaiDeleteDialog from '../sensai/sensai-delete-components/sensai-delete-dialog';
 import DojoViewDialog from './dojo-view-dialog/dojo-view-dialog';
+import DojoDeleteDialog from './dojo-delete-dialog/dojo-delete-dialog';
 
 function DojoTable() {
   const sensai = [
@@ -60,8 +59,7 @@ function DojoTable() {
 
   return (
     <Table>
-      <TableCaption>All the classes you have created will be listed here.</TableCaption>
-      <TableHeader>
+      <TableHeader className=" bg-[#202020]">
         <TableRow>
           <TableHead className="w-[100px]">Name</TableHead>
           <TableHead>Location</TableHead>
@@ -77,7 +75,7 @@ function DojoTable() {
           <TableRow key={index}>
             <TableCell className="font-medium">{sensais.name}</TableCell>
             <TableCell>{sensais.location}</TableCell>
-            <TableCell>{sensais.time}</TableCell>
+            <TableCell className=" text-blue-500">{sensais.time}</TableCell>
             <TableCell className="text-right">{sensais.days}</TableCell>
             <TableCell className="text-right">{sensais.assignedSensai}</TableCell>
             <TableCell className="text-right">{sensais.students}</TableCell>
@@ -87,7 +85,7 @@ function DojoTable() {
                 <Button variant="ghost" size="icon" className="h-8 w-8">
                   <Pencil className="h-4 w-4 text-gray-500" />
                 </Button>
-                <SensaiDeleteDialog />
+                <DojoDeleteDialog />
               </div>
             </TableCell>
           </TableRow>

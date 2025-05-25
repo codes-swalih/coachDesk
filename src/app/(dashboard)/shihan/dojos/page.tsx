@@ -1,6 +1,5 @@
 import DojoTable from '@/components/shihan/dojos/dojo-table';
-import NewDojoDialog from '@/components/shihan/dojos/new-dojo-dialog';
-import { Button } from '@/components/ui/button';
+import NewDojoDialog from '@/components/shihan/dojos/new-dojo-dialog/new-dojo-dialog';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -9,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Plus, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import React from 'react';
 
 function page() {

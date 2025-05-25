@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -61,10 +60,7 @@ const sensai = [
 export function SensaiTable() {
   return (
     <Table>
-      <TableCaption>
-        All the Sensais that you assigned and invited to handle your classes.
-      </TableCaption>
-      <TableHeader>
+      <TableHeader className=" bg-[#202020]">
         <TableRow>
           <TableHead className="w-[100px]">Name</TableHead>
           <TableHead>Email</TableHead>
@@ -79,7 +75,9 @@ export function SensaiTable() {
           <TableRow key={index}>
             <TableCell className="font-medium">{sensais.name}</TableCell>
             <TableCell>{sensais.email}</TableCell>
-            <TableCell>{sensais.status}</TableCell>
+            <div className=" w-16 h-8 bg-green-700 rounded-full flex items-center justify-center mt-2">
+              <TableCell className="">{sensais.status}</TableCell>
+            </div>
             <TableCell className="text-right">{sensais.assignedClasses}</TableCell>
             <TableCell className="text-right">{sensais.dateJoined}</TableCell>
             <TableCell>
