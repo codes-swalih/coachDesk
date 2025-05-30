@@ -11,6 +11,7 @@ import {
   SidebarRail,
 } from '@/components/ui/sidebar';
 import NavMain from './nav-main';
+import ThemeToggle from './theme-toggle';
 
 // This is sample data.
 
@@ -25,14 +26,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader className=" pt-10 px-5">
-        {/* <TeamSwitcher teams={data.teams} /> */}
-        <h1 className=" text-xl uppercase font-bold text-gray-400">coach desk</h1>
+        <h1 className=" text-xl uppercase font-bold dark:text-gray-500 ">coach desk</h1>
       </SidebarHeader>
       <SidebarContent className=" px-5 mt-10">
         <NavMain menus={navigations} />
-        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
-      <SidebarFooter>{/* <NavUser user={data.user} /> */}</SidebarFooter>
+      <SidebarFooter>
+        <ThemeToggle />
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );

@@ -11,6 +11,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.817.0",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -27,12 +28,19 @@
     "@radix-ui/react-toast": "^1.2.14",
     "@radix-ui/react-toggle": "^1.1.9",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@types/bcrypt": "^5.0.2",
+    "@types/nodemailer": "^6.4.17",
+    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.511.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.1",
     "next": "14.2.14",
+    "next-themes": "^0.4.6",
+    "nodemailer": "^7.0.3",
     "react": "^18",
     "react-day-picker": "8.10.1",
     "react-dom": "^18",
@@ -40,6 +48,7 @@
     "react-icons": "^5.5.0",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "uuid": "^11.1.0",
     "zod": "^3.25.27"
   },
   "devDependencies": {

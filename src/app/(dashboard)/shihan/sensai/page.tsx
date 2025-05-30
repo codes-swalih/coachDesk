@@ -59,12 +59,15 @@ function page() {
       <div className=" grid grid-cols-3 gap-10">
         {overView.map((item: any, index: number) => {
           return (
-            <div key={index} className=" h-52 bg-[#303030] rounded-md p-10 flex flex-col gap-5">
-              <div className=" flex flex-col gap-2">
+            <div
+              key={index}
+              className=" h-52 dark:bg-[#303030] bg-gray-200 rounded-md p-10 flex flex-col gap-5"
+            >
+              <div className=" flex flex-col gap-1">
                 <h1 className=" text-3xl font-semibold">{item.name}</h1>
-                <h1 className=" text-gray-400">{item.description}</h1>
+                <h1 className=" dark:text-gray-400 text-black">{item.description}</h1>
               </div>
-              <h1 className=" text-4xl text-gray-300 font-semibold">{item.value}</h1>
+              <h1 className=" text-4xl dark:text-gray-300 font-semibold">{item.value}</h1>
             </div>
           );
         })}

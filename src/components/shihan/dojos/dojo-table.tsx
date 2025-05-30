@@ -59,7 +59,7 @@ function DojoTable() {
 
   return (
     <Table>
-      <TableHeader className=" bg-[#202020]">
+      <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Name</TableHead>
           <TableHead>Location</TableHead>

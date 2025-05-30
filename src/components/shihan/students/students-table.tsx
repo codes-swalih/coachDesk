@@ -55,7 +55,7 @@ function StudentTable() {
 
   return (
     <Table>
-      <TableHeader className=" bg-[#202020]">
+      <TableHeader>
         <TableRow>
           <TableHead className="w-[200px]">Student Name</TableHead>
           <TableHead>Contact</TableHead>

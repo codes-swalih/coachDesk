@@ -24,14 +24,14 @@ function NavMain(props: { menus: Menu[] }) {
         return (
           <div
             key={index}
-            className={`${isActive ? 'bg-[#303030] px-3 py-2 flex gap-2 items-center rounded-md' : 'bg-none px-3 py-2 flex gap-2 items-center'}`}
+            className={`${isActive ? 'dark:bg-[#404040] bg-gray-200 px-3 py-2 flex gap-2 items-center rounded-md' : 'bg-none px-3 py-2 flex gap-2 items-center'}`}
           >
-            <Icon className={`w-4 h-4 ${isActive ? 'text-white ' : 'text-gray-400'}`} />
+            <Icon className={`w-4 h-4 ${isActive ? 'dark:text-white ' : 'dark:text-gray-400'}`} />
             <Link
               href={menu.href}
-              className={`${isActive ? 'text-white' : 'text-gray-400'} hover:text-white`}
+              className={`${isActive ? 'dark:text-white text-gray-500' : 'dark:text-gray-400 text-gray-400'} `}
             >
-              {menu.name}
+              <h1 className=" dark:hover:text-gray-500   ">{menu.name}</h1>
             </Link>
           </div>
         );
