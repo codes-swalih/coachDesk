@@ -11,7 +11,7 @@ const DojoSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Location is required'],
     },
-    students : {type : [mongoose.Schema.Types.ObjectId], ref: 'Students'},
+    students: { type: [mongoose.Schema.Types.ObjectId], ref: 'Students' },
     schedule: [
       {
         day: {

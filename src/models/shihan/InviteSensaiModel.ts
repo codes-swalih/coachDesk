@@ -44,6 +44,10 @@ const InviteSensaiSchema = new mongoose.Schema(
       required: [true, 'Shihan ID is required'],
       ref: 'Shihan',
     },
+    sensaiId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Sensai',
+    },
   },
   { timestamps: true }
 );
