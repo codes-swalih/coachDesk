@@ -4,6 +4,7 @@ import { parseShihanForm } from '@/lib/shihan/parseShihanForm';
 import { uploadImageToR2 } from '@/configs/uploadFileToR2';
 import Shihan from '@/models/shihan/ShihanModel';
 import { NextResponse } from 'next/server';
+import { generateToken } from '@/lib/generateToken';
 
 export const POST = async (req: Request) => {
   try {
@@ -49,7 +50,7 @@ export const POST = async (req: Request) => {
       {
         status: 'Success',
         message: 'You have successfully registered in Coach Desk',
-        shihan: newShihan,
+        shihan: { newShihan, token: generateToken({ id: newShihan._id }) },
       },
       { status: 201 }
     );

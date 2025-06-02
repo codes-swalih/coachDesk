@@ -85,10 +85,6 @@ const shihanSchema = new mongoose.Schema(
   }
 );
 
-shihanSchema.pre('save', function (next) {
-  next();
-});
-
 const Shihan = mongoose.models.Shihan || mongoose.model('Shihan', shihanSchema);
 
 export default Shihan;

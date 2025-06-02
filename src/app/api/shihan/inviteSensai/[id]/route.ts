@@ -1,4 +1,5 @@
 import connectToDB from '@/configs/mongodb';
+
 import InviteSensai from '@/models/shihan/InviteSensaiModel';
 import { IInviteSensai } from '@/types/shihan/inviteType';
 import { NextResponse } from 'next/server';

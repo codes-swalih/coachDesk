@@ -1,10 +1,23 @@
 import connectToDB from '@/configs/mongodb';
 import { sendInvitationEmail } from '@/lib/emailTemplates';
+import { protectShihan } from '@/lib/jwt';
 import InviteSensai from '@/models/shihan/InviteSensaiModel';
 import { IInviteSensai } from '@/types/shihan/inviteType';
 import { NextResponse } from 'next/server';
 
 export const POST = async (req: Request) => {
+  const authResult = await protectShihan(req);
+
+  if (authResult.error) {
+    return NextResponse.json(
+      { status: 'Failed', message: authResult.error },
+      { status: authResult.status }
+    );
+  }
+
+  if (!authResult.shihan) {
+    return NextResponse.json({ status: 'Failed', message: 'Shihan not found' }, { status: 404 });
+  }
   const body: IInviteSensai = await req.json();
   const { email, dojos, schedule, startDate, message, status, shihanId } = body;
   try {

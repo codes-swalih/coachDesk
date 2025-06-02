@@ -11,4 +11,5 @@ export interface IDojo {
   location: string;
   schedule: DojoSchedule[];
   shihanId: string;
+  totalClassPerMonth: number;
 }

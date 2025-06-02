@@ -1,4 +1,5 @@
 import connectToDB from '@/configs/mongodb';
+import { protectShihan } from '@/lib/jwt';
 import InviteSensai from '@/models/shihan/InviteSensaiModel';
 import { NextResponse } from 'next/server';
 
@@ -7,6 +8,7 @@ export const PUT = async (req: Request, { params }: { params: { id: string } }) 
   const { status } = await req.json();
   try {
     await connectToDB();
+
     const invitationStatus = await InviteSensai.findByIdAndUpdate(id, { status }, { new: true });
     if (!invitationStatus)
       return NextResponse.json(

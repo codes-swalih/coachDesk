@@ -5,13 +5,19 @@ import { NextResponse } from 'next/server';
 
 export const POST = async (req: Request) => {
   const body: IDojo = await req.json();
-  const { dojoName, location, schedule, shihanId } = body;
+  const { dojoName, location, schedule, shihanId, totalClassPerMonth } = body;
   try {
     await connectToDB();
     const isAlreadyExist = await Dojos.findOne({ dojoName, location, shihanId });
     if (isAlreadyExist)
       return NextResponse.json({ message: 'Dojo already exist' }, { status: 400 });
-    const newDojo = await Dojos.create({ dojoName, location, schedule, shihanId });
+    const newDojo = await Dojos.create({
+      dojoName,
+      location,
+      schedule,
+      totalClassPerMonth,
+      shihanId,
+    });
     return NextResponse.json(
       { status: 'Success', message: 'Dojo created successfully', newDojo },
       { status: 201 }

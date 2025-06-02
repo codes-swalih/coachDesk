@@ -4,6 +4,7 @@ import { parseSensaiForm } from '@/lib/sensai/parsingSensaiForm';
 import { uploadImageToR2 } from '@/configs/uploadFileToR2';
 import Sensai from '@/models/sensai/SensaiModel';
 import { NextResponse } from 'next/server';
+import { generateToken } from '@/lib/generateToken';
 
 export const POST = async (req: Request) => {
   try {
@@ -48,6 +49,7 @@ export const POST = async (req: Request) => {
         status: 'Success',
         message: 'You have successfully registered in Coach Desk',
         sensai: newSensai,
+        token: generateToken({ id: newSensai._id }),
       },
       { status: 201 }
     );

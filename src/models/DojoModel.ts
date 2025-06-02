@@ -31,10 +31,15 @@ const DojoSchema = new mongoose.Schema(
         },
       },
     ],
+    totalClassPerMonth: {
+      type: Number,
+      required: [true, 'Total class per month is required'],
+    },
     shihanId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Shihan',
       required: [true, 'Shihan ID is required'],
+      index: true,
     },
   },
   { timestamps: true }
